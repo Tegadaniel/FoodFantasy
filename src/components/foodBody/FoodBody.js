@@ -3,7 +3,7 @@ import { Box, Button, Image, Text, Flex, Spacer } from "@chakra-ui/react";
 // import Truncate from 'react-truncate';
 import { AddIcon } from '@chakra-ui/icons'
 
-const FoodBody = ({ item }) => {
+const FoodBody = ({ item, addCart}) => {
     return (
 
         <Box
@@ -58,7 +58,7 @@ const FoodBody = ({ item }) => {
             <Flex>
             <Spacer/>
             <Box mt="1">
-                <Button>
+                <Button onClick ={() => addCart(item)}>
                 <AddIcon/>
                 </Button>
                </Box>

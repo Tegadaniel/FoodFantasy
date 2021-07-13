@@ -19,8 +19,15 @@ const Header = (props) => {
         >
 
             <Flex align="center" mr={5}>
-                <Heading bgGradient="linear(to-l, #7928CA,#FF0080)"
-                    bgClip="text" fontSize="3xl" as="h6" size="md" letterSpacing={"tighter"}>
+                <Heading 
+                bgGradient="linear(to-l, #7928CA,#FF0080)"
+                    bgClip="text" 
+                    fontSize="3xl" 
+                    as="h6" 
+                    size="md" 
+                    letterSpacing={"tighter"}
+                    
+                    >
                     Food Fantasy
                 </Heading>
             </Flex>
