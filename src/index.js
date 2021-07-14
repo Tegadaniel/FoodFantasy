@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from "@chakra-ui/react";
+import { configureStore } from '@reduxjs/toolkit'
+import rootReducer from './slices';
+import { Provider } from 'react-redux'
 
+const store = configureStore({ reducer: rootReducer })
 ReactDOM.render(
   <ChakraProvider>
+    <Provider store={store}>
     <App />
+    </Provider>
     </ChakraProvider>,
   document.getElementById('root')
 );

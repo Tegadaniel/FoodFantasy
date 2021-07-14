@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, Button, Image, Text, Flex, Spacer } from "@chakra-ui/react";
+import { Box, Image, Text, Flex, Spacer, IconButton } from "@chakra-ui/react";
 // import Truncate from 'react-truncate';
 import { AddIcon } from '@chakra-ui/icons'
 
-const FoodBody = ({ item, addCart}) => {
+const FoodBody = ({ meal}) => {
     return (
 
         <Box
@@ -21,8 +21,8 @@ const FoodBody = ({ item, addCart}) => {
         >
             <Image
                 rounded="0.5rem"
-                src={item.strMealThumb}
-                alt={item.title}
+                src={meal.strMealThumb}
+                alt={meal.title}
             />
 
             <Text
@@ -30,7 +30,7 @@ const FoodBody = ({ item, addCart}) => {
                 mt="1"
                 color="gray.600"
                 fontSize="sm">
-                Meal Name: {item.strMeal}
+                Meal Name: {meal.strMeal}
             </Text>
             
         <Text
@@ -39,32 +39,41 @@ const FoodBody = ({ item, addCart}) => {
             as="h4"
             lineHeight="tight"
             isTruncated
-        >Description: {item.description}</Text>
+        >Description: {meal.description}</Text>
 
             {/* <Truncate 
                 mt="1"
                 fontWeight="semibold"
                 as="h4"
-                lineHeight="tight" lines={3} ellipsis={<span>... <a href={item.description}>Read more</a></span>}>
-                Description: {item.description}
+                lineHeight="tight" lines={3} ellipsis={<span>... <a href={meal.description}>Read more</a></span>}>
+                Description: {meal.description}
             </Truncate> */}
             <Text
                 as="span"
                 mt="1"
                 color="gray.600"
                 fontSize="sm">
-                Price: {item.price}/plate
+                Price: {meal.price}/plate
             </Text>
             <Flex>
             <Spacer/>
-            <Box mt="1">
-                <Button onClick ={() => addCart(item)}>
+            
+    <IconButton
+    // mt="1" onClick ={() => addCart(meal)}
+    variant="outline"
+    colorScheme="black"
+    aria-label="Cart Plus"
+    fontSize="20px"
+    icon={ <AddIcon/>}></IconButton>
+            {/* <Box mt="1"> */}
+                {/* <Button  mt="1" onClick ={() => addCart(meal)}>
                 <AddIcon/>
-                </Button>
-               </Box>
+                </Button> */}
+               {/* </Box> */}
             </Flex>
         </Box>
     )
+
 }
 
 export default FoodBody
